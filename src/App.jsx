@@ -70,7 +70,7 @@ function Rig(props) {
   return <group ref={ref} {...props} />
 }
 
-function Carousel({ radius = 1.4, count = 2 }) {
+function Carousel({ radius = 1.4, count = 5 }) {
   return Array.from({ length: count }, (_, i) => (
     <Card
       key={i}
