@@ -74,7 +74,7 @@ function Carousel({ radius = 1.4, count = 2 }) {
   return Array.from({ length: count }, (_, i) => (
     <Card
       key={i}
-      url={`/img${Math.floor(i % 10) + 1}_.jpg`}
+      url={`${import.meta.env.BASE_URL}img${Math.floor(i % 10) + 1}_.jpg`}
       position={[Math.sin((i / count) * Math.PI * 2) * radius, 0, Math.cos((i / count) * Math.PI * 2) * radius]}
       rotation={[0, Math.PI + (i / count) * Math.PI * 2, 0]}
     />
@@ -100,7 +100,7 @@ function Card({ url, ...props }) {
 
 function Banner(props) {
   const ref = useRef()
-  const texture = useTexture('/work_.png')
+  const texture = useTexture(`${import.meta.env.BASE_URL}work_.png`)
   texture.wrapS = texture.wrapT = THREE.RepeatWrapping
   const scroll = useScroll()
   useFrame((state, delta) => {
